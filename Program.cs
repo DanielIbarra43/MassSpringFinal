@@ -14,7 +14,7 @@ class Program
         mass.Mass2 = 7;
         mass.Constant1 = 10;
         mass.Constant2 = 20;
- 
+
         double t = 0.0f;     // Start Time
         double dt = 0.02;   // Time Step 
         double tEnd = 5.0;  // End Time 
@@ -23,7 +23,7 @@ class Program
         Console.WriteLine(mass.StateString(t));
         while(t < tEnd - dt*0.5)
         {
-           mass.StepEuler1(t,dt);
+           mass.StepRK2first(t,dt);
            t += dt;
             Console.WriteLine(mass.StateString(t));
 
@@ -32,7 +32,7 @@ class Program
         Console.WriteLine(mass.StateString(t));
         while(t < tEnd - dt*0.5)
         {
-            mass.StepEuler2(t,dt);
+            mass.StepRK2second(t,dt);
             t += dt;
             Console.WriteLine(mass.StateString(t));
         }
