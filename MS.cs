@@ -61,7 +61,7 @@ namespace Sim
             RhsFuncSpringMass1(x1,x2,time,f1[0]);
             for(i=0;i<2;++i)
             {
-                x1i[i] += f1[0][i] * dtime;
+                x1i[i] = x1[i] + f1[0][i] * dtime;
             }
 
             RhsFuncSpringMass1(x1i,x2i,time+dtime,f1[1]);
@@ -79,7 +79,7 @@ namespace Sim
             RhsFuncSpringMass2(x1,x2,time,f2[0]);
             for(i=0;i<2;++i)
             {
-                x2[i] += f2[0][i] * dtime;
+                x2i[i] = x2[i] + f2[0][i] * dtime;
             }
 
             
